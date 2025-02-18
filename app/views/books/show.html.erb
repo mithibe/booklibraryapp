@@ -1,0 +1,22 @@
+<h2> <%= @book.title %> by <%= @book.author %> </h2>
+<p> <%= @book.description %> </p>
+
+<h3> Borrowing History </h3>
+<ul>
+    <% @borrowings.each do |borrowing| %>
+        <li>
+            Borrowed by <strong><%= borrowing.borrower_name %></strong> on <%= borrowing.borrowed_on %>
+            <% if borrowing.returned_on %>
+                - Returned on <%= borrowing.returned_on %>
+            <%else%>
+                - <%= link_to 'Mark as Returned', return_borrowing_path(borrowing), method: :post, data: {confirm: 'Mark this book as returned?'} %>
+            <%end%>
+        </li>
+    <%end%>
+</ul>
+
+<%= link_to 'Borrow Book', new_book_borrowing_path(@book) %> |
+<%= link_to 'Edit Book', edit_book_path(@book) %> |
+<%= link_to 'Delete Book', @book, method: :delete, data: {confirm: 'Are you sure?'} %>
+
+<%= link_to 'Back to All Books', books_path %>
