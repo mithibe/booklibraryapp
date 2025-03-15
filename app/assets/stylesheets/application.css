@@ -8,3 +8,58 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+body{
+    background: #ccc;
+}
+
+.title{
+    color: #333;
+    border-bottom: 2px solid #333;
+}
+
+a{
+    margin:50px 0;
+    padding: 10px;
+    height: 50px;
+    width: 200px;
+    text-decoration: none;
+    color: #eee;
+    background: #333;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+li{
+    margin: 30px 0;
+}
+
+.homePage{
+    display: grid;
+}
+
+input{
+    margin: 30px 0;
+    height: 40px;
+    width: auto;
+    background: #fff;
+    border: none;
+    /* border: 0px solid #333; */
+    /* box-shadow: 5px 5px px ; */
+}
+
+input[type="submit"] {
+    background: #333;
+    color: #eee;
+    border: 2px solid #333;
+}
+
+label{
+    font-size: 24px;
+}
+
+form{
+
+}
