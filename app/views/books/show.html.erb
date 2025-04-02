@@ -9,7 +9,8 @@
             <% if borrowing.returned_on %>
                 - Returned on <%= borrowing.returned_on %>
             <%else%>
-                - <%= link_to 'Mark as Returned', return_borrowing_path(borrowing), method: :post, data: {confirm: 'Mark this book as returned?'} %>
+                - <%= debug borrowing %>
+                - <%= button_to 'Mark as Returned', return_borrowing_path(borrowing), method: :post, data: {confirm: 'Mark this book as returned?'} %>
             <%end%>
         </li>
     <%end%>

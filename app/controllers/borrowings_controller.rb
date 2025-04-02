@@ -26,8 +26,11 @@ class BorrowingsController < ApplicationController
 
   def mark_returned
     @borrowing = Borrowing.find(params[:id])
-    @borrowing.update(returned_on: Date.today)
-    redirect_to book_path(@borrowing.book), notice: 'Book returned successfully.'
+    if @borrowing.update(returned_on: Date.today)
+      redirect_to book_path(@borrowing.book), notice: 'Book returned successfully.'
+    else
+      redirect_to book_path(@borrowing.book), alert: 'Could not mark as returned.'
+    end
   end
 
   def borrower_history
