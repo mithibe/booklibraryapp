@@ -10,7 +10,7 @@
                 - Returned on <%= borrowing.returned_on %>
             <%else%>
                 - <%= debug borrowing %>
-                - <%= button_to 'Mark as Returned', return_borrowing_path(borrowing), method: :post, data: {confirm: 'Mark this book as returned?'} %>
+                - <%= button_to 'Mark as Returned', return_borrowing_path(borrowing), method: :post, data: {turbo_confirm: 'Mark this book as returned?'} %>
             <%end%>
         </li>
     <%end%>
