@@ -14,6 +14,10 @@ class BorrowingsController < ApplicationController
     end
   end
 
+  def update
+    
+  end
+
   private
 
   def set_book
